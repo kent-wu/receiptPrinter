@@ -1,6 +1,7 @@
 package printer;
 
 import org.junit.Before;
+import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
@@ -13,7 +14,7 @@ public class ReceiptBodyPrinterTest {
         receiptBodyPrinter = new ReceiptBodyPrinter();
     }
 
-    @org.junit.Test
+    @Test
     public void should_print_2_item_detail() throws Exception {
         String inputJson = "['ITEM000001','ITEM000001','ITEM000001','ITEM000005','ITEM000005','ITEM000005','ITEM000005','ITEM000005']";
 
