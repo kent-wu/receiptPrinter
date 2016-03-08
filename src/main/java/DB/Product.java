@@ -1,6 +1,7 @@
 package DB;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 public class Product {
     private String name;
@@ -8,13 +9,15 @@ public class Product {
     private BigDecimal unitPrice;
     private String category;
     private String barCode;
+    private List<Discount> discountRules;
 
-    public Product(String name, String unit, double unitPrice, String category, String barcode) {
+    public Product(String name, String unit, double unitPrice, String category, String barcode, List<Discount> discounts) {
         this.name = name;
         this.unit = unit;
         this.unitPrice = new BigDecimal(unitPrice);
         this.category = category;
         this.barCode = barcode;
+        this.discountRules = discounts;
     }
 
     public String getName() {
@@ -55,5 +58,13 @@ public class Product {
 
     public void setBarCode(String barCode) {
         this.barCode = barCode;
+    }
+
+    public List<Discount> getDiscountRules() {
+        return discountRules;
+    }
+
+    public void setDiscountRules(List<Discount> discountRules) {
+        this.discountRules = discountRules;
     }
 }
